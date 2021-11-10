@@ -413,8 +413,11 @@ void fake_dl_init()
     __fake_dl[3].process_exec_hook            = NULL;
     __fake_dl[3].handler_hooks                = NULL;
 #else
-    __fake_dl[3].module_initialize            = librender_module_initialize;
-    __fake_dl[3].module_finalize              = librender_module_finalize;
+    //__fake_dl[3].module_initialize            = librender_module_initialize;
+    //__fake_dl[3].module_finalize              = librender_module_finalize;
+    __fake_dl[3].module_initialize            = NULL;
+    __fake_dl[3].module_finalize              = NULL;
+
     __fake_dl[3].instance_create_hook         = librender_instance_create_hook;
     __fake_dl[3].instance_destroy_hook        = librender_instance_destroy_hook;
     __fake_dl[3].instance_pre_execute_hook    = NULL;
@@ -1173,7 +1176,8 @@ void fake_dl_init()
     __fake_dl[22].process_exec_hook            = NULL;
     __fake_dl[22].handler_hooks                = NULL;
 #else
-    __fake_dl[22].module_initialize            = mod_grproc_module_initialize;
+    //__fake_dl[22].module_initialize            = mod_grproc_module_initialize;
+    __fake_dl[22].module_initialize            = NULL;
     __fake_dl[22].module_finalize              = NULL;
     __fake_dl[22].instance_create_hook         = NULL;
     __fake_dl[22].instance_destroy_hook        = NULL;
@@ -1579,7 +1583,8 @@ void fake_dl_init()
     __fake_dl[32].instance_destroy_hook        = NULL;
     __fake_dl[32].instance_pre_execute_hook    = NULL;
     __fake_dl[32].instance_pos_execute_hook    = NULL;
-    __fake_dl[32].process_exec_hook            = mod_proc_process_exec_hook;
+    //__fake_dl[32].process_exec_hook            = mod_proc_process_exec_hook;
+    __fake_dl[32].process_exec_hook            = NULL;
     __fake_dl[32].handler_hooks                = NULL;
 #endif
     __fake_dl[32].modules_dependency           = NULL;
@@ -2054,7 +2059,8 @@ void fake_dl_init()
     __fake_dl[44].handler_hooks                = NULL;
 #else
     __fake_dl[44].module_initialize            = mod_debug_module_initialize;
-    __fake_dl[44].module_finalize              = mod_debug_module_finalize;
+    //__fake_dl[44].module_finalize              = mod_debug_module_finalize;
+    __fake_dl[44].module_finalize              = NULL;
     __fake_dl[44].instance_create_hook         = NULL;
     __fake_dl[44].instance_destroy_hook        = NULL;
     __fake_dl[44].instance_pre_execute_hook    = NULL;
@@ -2133,7 +2139,8 @@ void fake_dl_init()
     __fake_dl[46].process_exec_hook            = NULL;
     __fake_dl[46].handler_hooks                = NULL;
 #else
-    __fake_dl[46].module_initialize            = mod_m7_module_initialize;
+    //__fake_dl[46].module_initialize            = mod_m7_module_initialize;
+    __fake_dl[46].module_initialize            = NULL;
     __fake_dl[46].module_finalize              = NULL;
     __fake_dl[46].instance_create_hook         = NULL;
     __fake_dl[46].instance_destroy_hook        = NULL;
