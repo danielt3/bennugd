@@ -70,6 +70,4 @@ link_libraries( -Wl,--start-group
                 -Wl,--end-group
             )
 
-message( "Linker params = [${CMAKE_C_LINK_EXECUTABLE}]")
-
 add_executable( ${PROJECT_NAME} ${BGDI_MAIN_SRCS} )
