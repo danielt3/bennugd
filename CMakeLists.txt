@@ -15,6 +15,7 @@ add_definitions(-DTARGET_WIN32)
 add_definitions(-DWIN32)
 add_definitions(-D_WIN32)
 add_definitions(-DUSE_LIBDES)
+add_definitions(-DHAVE_STRING_H)
 add_definitions(-D_GNU_SOURCE=1)
 
 find_package(SDL REQUIRED)
