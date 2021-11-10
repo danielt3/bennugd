@@ -8,8 +8,10 @@ set( BGDI_MAIN_SRCS
 
 add_definitions("-DVERSION=\"1.0.0\"")
 
-link_libraries( bgload
-                bgdrtm
+# HACK: CMake will just pass whatever we put
+# in the list to the linker (we need start-group/end-group
+# due to the large number of libraries)
+link_libraries( -Wl,--start-group
                 mod_blendop
                 mod_cd
                 mod_crypt
@@ -44,6 +46,7 @@ link_libraries( bgload
                 mod_timers
                 mod_video
                 mod_wm
+                bgload
                 joy
                 scroll
                 mouse
@@ -57,12 +60,14 @@ link_libraries( bgload
                 draw
                 video
                 grbase
-                des
                 common
+                bgdrtm
+                des
                 ${SDL_LIBRARIES}
                 ${SDL_MIXER_LIBRARIES}
                 ${PNG_LIBRARIES}
                 ${ZLIB_LIBRARIES}
+                -Wl,--end-group
             )
 
 message( "Linker params = [${CMAKE_C_LINK_EXECUTABLE}]")
