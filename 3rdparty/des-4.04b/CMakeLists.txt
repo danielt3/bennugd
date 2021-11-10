@@ -32,7 +32,4 @@ set( LIBDES_SRCS
 )
 
 add_definitions(-DRAND)
-
 add_library(${PROJECT_NAME} STATIC ${LIBDES_SRCS})
-
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
