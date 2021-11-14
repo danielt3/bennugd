@@ -43,10 +43,8 @@ set( CMAKE_RANLIB       "${MINGW32_ROOT_DIR}/bin/ranlib${TOOL_OS_SUFFIX}"  CACHE
 set( PKG_CONFIG_EXECUTABLE "${MINGW32_ROOT_DIR}/bin/pkg-config${TOOL_OS_SUFFIX}" )
 
 # cache flags
-set( CMAKE_CXX_FLAGS           ""                        CACHE STRING "C++ flags" )
-set( CMAKE_C_FLAGS             ""                        CACHE STRING "C flags" )
-set( CMAKE_CXX_FLAGS_RELEASE   "-O2 -DNDEBUG"            CACHE STRING "C++ Release flags" )
-set( CMAKE_C_FLAGS_RELEASE     "-O2 -DNDEBUG"            CACHE STRING "C Release flags" )
+set( CMAKE_CXX_FLAGS_RELEASE   "-O2 -DNDEBUG -finline-functions -fno-strict-aliasing"            CACHE STRING "C++ Release flags" )
+set( CMAKE_C_FLAGS_RELEASE     "-O2 -DNDEBUG -finline-functions -fno-strict-aliasing"            CACHE STRING "C Release flags" )
 set( CMAKE_CXX_FLAGS_DEBUG     "-O0 -g -DDEBUG -D_DEBUG" CACHE STRING "C++ Debug flags" )
 set( CMAKE_C_FLAGS_DEBUG       "-O0 -g -DDEBUG -D_DEBUG" CACHE STRING "C Debug flags" )
 set( CMAKE_SHARED_LINKER_FLAGS ""                        CACHE STRING "shared linker flags" )
