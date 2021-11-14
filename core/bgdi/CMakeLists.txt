@@ -63,10 +63,13 @@ link_libraries( -Wl,--start-group
                 common
                 bgdrtm
                 des
+                vorbisfile
                 ${SDL_LIBRARIES}
                 ${SDL_MIXER_LIBRARIES}
                 ${PNG_LIBRARIES}
                 ${ZLIB_LIBRARIES}
+                ${VORBIS_LIBRARY}
+                ${OGG_LIBRARY}
                 -Wl,--end-group
             )
 
