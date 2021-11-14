@@ -18,10 +18,13 @@ add_definitions(-DUSE_LIBDES)
 add_definitions(-DHAVE_STRING_H)
 add_definitions(-D_GNU_SOURCE=1)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 find_package(SDL REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(PNG REQUIRED)
 find_package(SDL_mixer REQUIRED)
+find_package(OGG REQUIRED)
+find_package(Vorbis REQUIRED)
 
 include_directories(${SDL_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/des-4.04b)
