@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.4)
 message("CMake ${CMAKE_VERSION}")
 
-if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(CMAKE_TOOLCHAIN_FILE "./cmake/i686-mingw-w64.toolchain.cmake" CACHE PATH "toolchain file")
-endif()
-
 project(BennuGD 
     VERSION 1.0.0
     DESCRIPTION "BennuGD Game Engine"
     LANGUAGES C)
+
+set( CMAKE_CXX_FLAGS_RELEASE   "-O2 -DNDEBUG -finline-functions -fno-strict-aliasing"            CACHE STRING "C++ Release flags" )
+set( CMAKE_C_FLAGS_RELEASE     "-O2 -DNDEBUG -finline-functions -fno-strict-aliasing"            CACHE STRING "C Release flags" )
+set( CMAKE_CXX_FLAGS_DEBUG     "-O0 -g -DDEBUG -D_DEBUG" CACHE STRING "C++ Debug flags" )
+set( CMAKE_C_FLAGS_DEBUG       "-O0 -g -DDEBUG -D_DEBUG" CACHE STRING "C Debug flags" )
 
 add_definitions(-D__STATIC__)
 add_definitions(-DTARGET_WIN32)
