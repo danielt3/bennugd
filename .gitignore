@@ -13,3 +13,5 @@
 **/libtool
 bin/*
 build/*
+build-Debug/*
+build-Release/*
