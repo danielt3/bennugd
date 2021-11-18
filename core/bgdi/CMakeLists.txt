@@ -7,6 +7,7 @@ set( BGDI_MAIN_SRCS
 )
 
 add_definitions("-DVERSION=\"1.0.0\"")
+add_link_options("-mconsole")
 
 # HACK: CMake will just pass whatever we put
 # in the list to the linker (we need start-group/end-group
