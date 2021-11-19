@@ -1,0 +1,17 @@
+**/.deps
+**/.libs
+**/*.exe
+**/*.a
+**/*.o
+**/*.obj
+**/*.dll
+**/*.lo
+**/*.la
+**/Makefile
+**/config.log
+**/config.status
+**/libtool
+bin/*
+build/*
+build-Debug/*
+build-Release/*
